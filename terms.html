@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — UniBase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #f5f5f3;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      background: #f5f5f3;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      display: flex; justify-content: center;
+      padding: clamp(1rem,2.5vw,1.6rem) 0;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .wm {
+      font-weight: 600;
+      font-size: clamp(0.7rem,1.2vw,0.85rem);
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: #111;
+      text-decoration: none;
+    }
+    main {
+      flex: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: clamp(2.5rem,6vw,5rem) clamp(1.5rem,5vw,2rem);
+    }
+    .doc-title {
+      font-weight: 500;
+      font-size: clamp(1.8rem,4vw,2.6rem);
+      color: #111;
+      margin-bottom: .6rem;
+    }
+    .doc-meta {
+      font-size: .85rem;
+      color: rgba(0,0,0,.4);
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+    .intro {
+      font-size: clamp(.9rem,1.6vw,1.05rem);
+      font-weight: 300;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    h2 {
+      font-weight: 600;
+      font-size: clamp(1rem,1.8vw,1.2rem);
+      color: #111;
+      margin: 2.2rem 0 .7rem;
+    }
+    p {
+      font-weight: 300;
+      font-size: clamp(.85rem,1.5vw,1rem);
+      color: #444;
+      line-height: 1.82;
+      margin-bottom: .9rem;
+    }
+    ul { margin: .5rem 0 1rem 1.2rem; }
+    ul li {
+      font-weight: 300;
+      font-size: clamp(.85rem,1.5vw,1rem);
+      color: #444;
+      line-height: 1.82;
+      margin-bottom: .55rem;
+    }
+    a.email { color: #2244cc; text-decoration: none; }
+    a.email:hover { text-decoration: underline; }
+
+    footer {
+      background: #000;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: clamp(1rem,2.5vw,1.6rem) clamp(1.5rem,5vw,4rem);
+    }
+    .footer-top {
+      display: flex;
+      justify-content: center;
+      margin-bottom: clamp(.6rem,1.2vw,1rem);
+    }
+    .footer-wm {
+      font-weight: 500;
+      font-size: clamp(.62rem,1vw,.78rem);
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
+    }
+    /* Grid: 3 equal columns so centre is always truly centred */
+    .footer-bottom {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: clamp(.7rem,2vw,1.4rem);
+      justify-content: flex-start;
+    }
+    .footer-left a {
+      font-size: clamp(.62rem,.95vw,.75rem);
+      color: rgba(255,255,255,.38);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .2s;
+      font-family: 'Outfit', sans-serif;
+    }
+    .footer-left a:hover { color: rgba(255,255,255,.8); }
+    .footer-copy {
+      font-size: clamp(.6rem,.9vw,.72rem);
+      color: rgba(255,255,255,.3);
+      text-align: center;
+      white-space: nowrap;
+      font-family: 'Outfit', sans-serif;
+    }
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: clamp(.8rem,1.8vw,1.3rem);
+      justify-content: flex-end;
+    }
+    .footer-right a {
+      color: rgba(255,255,255,.4);
+      transition: color .2s;
+      display: flex;
+      align-items: center;
+    }
+    .footer-right a:hover { color: rgba(255,255,255,.9); }
+    .footer-right svg {
+      width: clamp(15px,1.4vw,18px);
+      height: clamp(15px,1.4vw,18px);
+      fill: currentColor;
+    }
+    @media (max-width: 640px) {
+      .footer-bottom { grid-template-columns: 1fr; gap: .8rem; text-align: center; }
+      .footer-left, .footer-right { justify-content: center; }
+    } .footer-copy { padding: 0; } }
+      .footer-left { justify-content: center; }
+      .footer-center { order: -1; width: 100%; }
+      .footer-right { justify-content: center; width: 100%; }
+    }
+
+    /* ── Social icon brand glow on hover ── */
+    .footer-right a { position: relative; transition: color .3s, filter .3s; }
+
+    /* Instagram — pink/purple gradient glow */
+    .footer-right a.ig:hover {
+      color: #e1306c;
+      filter: drop-shadow(0 0 6px rgba(225,48,108,.8)) drop-shadow(0 0 14px rgba(131,58,180,.6));
+    }
+
+    /* X — white/grey glow */
+    .footer-right a.xt:hover {
+      color: #ffffff;
+      filter: drop-shadow(0 0 6px rgba(255,255,255,.7)) drop-shadow(0 0 14px rgba(180,180,180,.4));
+    }
+
+    /* YouTube — red glow */
+    .footer-right a.yt:hover {
+      color: #ff0000;
+      filter: drop-shadow(0 0 6px rgba(255,0,0,.85)) drop-shadow(0 0 14px rgba(255,0,0,.4));
+    }
+  </style>
+</head>
+<body>
+
+  <nav><a class="wm" href="index.html">UniBase</a></nav>
+
+  <main>
+    <h1 class="doc-title">Terms of Use</h1>
+    <div class="doc-meta">21 March 2026</div>
+
+    <p class="intro">Please read these Terms and Conditions carefully before using our service.</p>
+
+    <h2>1. Introduction</h2>
+    <p>These Terms and Conditions govern your use of our website, mobile app, and any other services we provide (collectively referred to as the "Service"). By using our Service, you agree to these Terms. If you don't agree, please don't use the Service.</p>
+    <p>These Terms apply to everyone who uses the Service, including visitors, account holders, and users who upload listings, search for roommates, or purchase goods, services, or subscriptions.</p>
+
+    <h2>2. Accounts</h2>
+    <p>To use some features of our Service, you need to create an account. By creating an account, you agree to:</p>
+    <ul>
+      <li>Provide accurate and up-to-date information.</li>
+      <li>Keep your login credentials secure and notify us immediately if you suspect unauthorized use.</li>
+    </ul>
+    <p>You are responsible for all activities that occur under your account.</p>
+    <p>Our Service is designed for students of all ages. If you are under 18, you may use the Service, but any financial transactions or binding agreements (such as booking a PG or tiffin service) must be made with the involvement and consent of a parent or guardian.</p>
+
+    <h2>3. User Content & Listings</h2>
+    <p>You may upload or create content (such as room listings, roommate profiles, or reviews) using our Service. By uploading or creating content, you agree that:</p>
+    <ul>
+      <li>You own or have permission to use and share the content.</li>
+      <li>You grant us a worldwide, non-exclusive, royalty-free, and transferable license to use, display, reproduce, modify, and distribute your content as part of our Service.</li>
+      <li>You are responsible for the content you upload, and it must not violate any laws, infringe intellectual property rights, or be harmful, offensive, or misleading.</li>
+    </ul>
+    <p>We reserve the right to remove or disable access to any content we believe violates these Terms.</p>
+
+    <h2>4. Purchases & Bookings</h2>
+    <p>We may offer goods, services, and subscriptions through the Service. By making a purchase or booking, you agree to:</p>
+    <ul>
+      <li>Pay the price listed at the time of purchase, including any applicable taxes.</li>
+      <li>Accept that all sales are final, except where refunds are required by law or specified in our refund policy or the specific service provider's policy.</li>
+      <li>Understand that subscriptions will automatically renew unless you cancel before the renewal date.</li>
+    </ul>
+    <p>You can manage or cancel your subscriptions through your account settings or by contacting us at <a class="email" href="mailto:unibaseindia@outlook.com">unibaseindia@outlook.com</a>.</p>
+
+    <h2>5. Ownership and Intellectual Property</h2>
+    <p>All content provided by UniBase, including our logo, visual design, trademarks, and other intellectual property, is our exclusive property. You may not use, copy, or distribute any of our content without our written permission.</p>
+    <p>You agree not to use our content in a way that suggests you are associated with or endorsed by us, unless you have our explicit consent.</p>
+
+    <h2>6. Termination</h2>
+    <p>We may suspend or terminate your account at any time if we believe you've violated these Terms or any applicable laws. If we do, you will no longer have access to the Service or your account, and your right to use the Service will end immediately.</p>
+    <p>If you want to terminate your account, you can do so by contacting us or through your account settings. Upon termination, your right to use the Service will stop immediately, but these Terms will still apply to any past use of the Service.</p>
+
+    <h2>7. Limitations of Liability</h2>
+    <p>To the fullest extent permitted by law, UniBase and its affiliates will not be liable for:</p>
+    <ul>
+      <li>Any indirect, incidental, special, or consequential damages (like lost profits, data loss, or personal injury).</li>
+      <li>Any amount greater than what you paid us in the past 12 months or ₹8,000, whichever is greater.</li>
+    </ul>
+    <p>Some jurisdictions don't allow limitations on liability, so this may not apply to you.</p>
+
+    <h2>8. "AS IS" and "AS AVAILABLE" Disclaimer</h2>
+    <p>Our Service is provided "AS IS" and "AS AVAILABLE." We make no guarantees that the Service will meet your needs, be uninterrupted, or error-free. Use the Service at your own risk. We are a discovery platform and are not directly responsible for the quality of the physical rooms, roommates, or food provided by third parties listed on the app.</p>
+
+    <h2>9. Third-Party Links and Content</h2>
+    <p>Our Service may include links to other websites or services we don't own or control. We are not responsible for the content, privacy policies, or practices of these third-party websites. If you leave our Service to visit a third-party site, you do so at your own risk.</p>
+
+    <h2>10. Governing Law</h2>
+    <p>These Terms are governed by the laws of India, without regard to conflict of law principles.</p>
+
+    <h2>11. Dispute Resolution</h2>
+    <p>If you have any issues or disputes with the Service, please contact us first to try to resolve it informally. If we can't resolve the issue, you agree to resolve disputes through binding arbitration, unless prohibited by law. Arbitration will take place in India.</p>
+
+    <h2>12. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. If we make significant changes, we'll notify you at least 30 days in advance through email or by posting a notice on our app/website. Continued use of the Service after any changes means you accept the updated Terms.</p>
+
+    <h2>13. Contact Us</h2>
+    <p>If you have any questions about these Terms and Conditions, feel free to contact us at <a class="email" href="mailto:unibaseindia@outlook.com">unibaseindia@outlook.com</a>.</p>
+  </main>
+
+  <footer>
+    <div class="footer-top"><span class="footer-wm">UniBase</span></div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+      <div class="footer-copy">© 2026 UniBase.in. All rights reserved.</div>
+      <div class="footer-right">
+        <a class="ig" href="https://www.instagram.com/unibase.in/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a class="xt" href="https://x.com/UniBase_in" target="_blank" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a class="yt" href="https://www.youtube.com/@UniBase-india" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
